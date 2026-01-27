@@ -1,0 +1,147 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{YWW{\etalchar{+}}23}
+
+\bibitem[AAES{\etalchar{+}}23]{Ali2023}
+Sajid Ali, Tamer Abuhmed, Shaker El-Sappagh, Khan Muhammad, Jose~M.
+  Alonso-Moral, Roberto Confalonieri, Riccardo Guidotti, Javier {Del Ser},
+  Natalia Díaz-Rodríguez, and Francisco Herrera.
+\newblock Explainable artificial intelligence (xai): What we know and what is
+  left to attain trustworthy artificial intelligence.
+\newblock {\em Information Fusion}, 99:101805, 2023.
+
+\bibitem[BJY{\etalchar{+}}18]{Bilal_2018}
+Alsallakh Bilal, Amin Jourabloo, Mao Ye, Xiaoming Liu, and Liu Ren.
+\newblock Do convolutional neural networks learn class hierarchy?
+\newblock {\em IEEE Transactions on Visualization and Computer Graphics},
+  24(1):152–162, January 2018.
+
+\bibitem[BLL{\etalchar{+}}25]{bove2025explanationsfailtypologydiscussion}
+Clara Bove, Thibault Laugel, Marie-Jeanne Lesot, Charles Tijus, and Marcin
+  Detyniecki.
+\newblock Why do explanations fail? a typology and discussion on failures in
+  xai, 2025.
+
+\bibitem[CMC{\etalchar{+}}24]{10495655}
+Can Cui, Yunsheng Ma, Xu~Cao, Wenqian Ye, and Ziran Wang.
+\newblock Drive as you speak: Enabling human-like interaction with large
+  language models in autonomous vehicles.
+\newblock In {\em 2024 IEEE/CVF Winter Conference on Applications of Computer
+  Vision Workshops (WACVW)}, pages 902--909, 2024.
+
+\bibitem[DSHV25]{DeSilvaHalloluwaVyas2025}
+Chameera De~Silva, Thilina Halloluwa, and Dhaval Vyas.
+\newblock A multi-layered research framework for human-centered ai: Defining
+  the path to explainability and trust.
+\newblock arXiv preprint arXiv:2504.13926, 2025.
+\newblock Submitted on 14 Apr 2025, last revised 26 Apr 2025.
+
+\bibitem[Fel25]{fel2025sparksexplainabilityrecentadvancements}
+Thomas Fel.
+\newblock Sparks of explainability: Recent advancements in explaining large
+  vision models, 2025.
+
+\bibitem[Fer23]{ferry2023interpretability}
+Julien Ferry.
+\newblock {\em Addressing Interpretability, Fairness \& Privacy in Machine
+  Learning through Combinatorial Optimization Methods}.
+\newblock Phd thesis, Universit{\'e} Paul Sabatier -- Toulouse III, Toulouse,
+  France, 2023.
+\newblock NNT: 2023TOU30199.
+
+\bibitem[FWN21]{Fauzan2021PleuralEC}
+Ahmad~Rafiansyah Fauzan, Mohammad~Iwan Wahyuddin, and Sari Ningsih.
+\newblock Pleural effusion classification based on chest x-ray images using
+  convolutional neural network.
+\newblock {\em Jurnal Ilmu Komputer dan Informasi}, 2021.
+
+\bibitem[GNKN23]{Nia23}
+N.~Ghaffar~Nia, E.~Kaplanoglu, and A.~Nasab.
+\newblock Evaluation of artificial intelligence techniques in disease diagnosis
+  and prediction.
+\newblock {\em Discov Artif Intell}, 3:5, 2023.
+
+\bibitem[IS23]{10.1145/3563691}
+Rami Ibrahim and M.~Omair Shafiq.
+\newblock Explainable convolutional neural networks: A taxonomy, review, and
+  future directions.
+\newblock {\em ACM Comput. Surv.}, 55(10), February 2023.
+
+\bibitem[JMH24]{JatnaManthovaniHasbullah2024}
+R.~Narendra Jatna, Reda Manthovani, and Hasbullah Hasbullah.
+\newblock The role of disruptive artificial intelligence technology in
+  combating crime in indonesia.
+\newblock {\em Beijing Law Review}, 15(3), 2024.
+
+\bibitem[MFP{\etalchar{+}}25]{MaslejEtAl2025}
+Nestor Maslej, Loredana Fattorini, Raymond Perrault, Yolanda Gil, Vanessa
+  Parli, Njenga Kariuki, Emily Capstick, Anka Reuel, Erik Brynjolfsson, John
+  Etchemendy, Katrina Ligett, Terah Lyons, James Manyika, Juan~Carlos Niebles,
+  Yoav Shoham, Russell Wald, Toby Walsh, Armin Hamrah, Lapo Santarlasci,
+  Julia~Betts Lotufo, Alexandra Rome, Andrew Shi, and Sukrut Oak.
+\newblock Artificial intelligence index report 2025.
+\newblock arXiv preprint arXiv:2504.07139, 2025.
+\newblock Submitted on 8 Apr 2025, last revised 20 Nov 2025.
+
+\bibitem[MNI25]{mohdnoor2025survey}
+Mohd~Halim Mohd~Noor and Ayokunle~Olalekan Ige.
+\newblock A survey on state-of-the-art deep learning applications and
+  challenges.
+\newblock {\em Engineering Applications of Artificial Intelligence},
+  159:111225, 2025.
+\newblock arXiv preprint arXiv:2403.17561v9, revised 25 Jul 2025.
+
+\bibitem[MYCR25]{McKinseySuperagency2025}
+Hannah Mayer, Lareina Yee, Michael Chui, and Roger Roberts.
+\newblock Superagency in the workplace: Empowering people to unlock ai’s full
+  potential.
+\newblock McKinsey \& Company Report, January 28 2025.
+\newblock Accessed 2025.
+
+\bibitem[OUM24]{OyeniyiEtAl2024}
+Lawrence~Damilare Oyeniyi, Chinonye~Esther Ugochukwu, and
+  Noluthando~Zamanjomane Mhlongo.
+\newblock Implementing ai in banking customer service: A review of current
+  trends and future applications.
+\newblock {\em International Journal of Science and Research Archive},
+  11(2):1492--1509, 2024.
+
+\bibitem[PF24]{PanForoughi2024}
+Y.~Pan and A.~Foroughi.
+\newblock Evaluation of ai tools for healthcare networks at the cloud-edge
+  interaction to diagnose autism in educational environments.
+\newblock {\em Journal of Cloud Computing}, 13:39, 2024.
+
+\bibitem[SAS25]{10.1145/3709367}
+Qiyang Sun, Alican Akman, and Bj\"{o}rn~W. Schuller.
+\newblock Explainable artificial intelligence for medical applications: A
+  review.
+\newblock {\em ACM Trans. Comput. Healthcare}, 6(2), February 2025.
+
+\bibitem[SF23]{Schwalbe_2023}
+Gesina Schwalbe and Bettina Finzel.
+\newblock A comprehensive taxonomy for explainable artificial intelligence: a
+  systematic survey of surveys on methods and concepts.
+\newblock {\em Data Mining and Knowledge Discovery}, 38(5):3043–3101, January
+  2023.
+
+\bibitem[SHZ{\etalchar{+}}24]{SitumeangEtAl2024}
+Sahat Maruli~Tua Situmeang, Rois Harliyanto, Pingky~Dezar Zulkarnain, Umar
+  Mahdi, and Taufan Nugroho.
+\newblock The role of artificial intelligence in criminal justice.
+\newblock {\em Global}, 2(8), 2024.
+
+\bibitem[YWW{\etalchar{+}}23]{Yang2023SurveyOE}
+Wenli Yang, Yuchen Wei, Hanyu Wei, Yanyu Chen, Guangtai Huang, Xiang Li, Renjie
+  Li, Naimeng Yao, Xinyi Wang, Xiaodong Gu, Muhammad~Bilal Amin, and Byeong
+  Kang.
+\newblock Survey on explainable ai: From approaches, limitations and
+  applications aspects.
+\newblock {\em Human-Centric Intelligent Systems}, 3:161 -- 188, 2023.
+
+\bibitem[ZWK25]{Zschech2025Inherently}
+Patrick Zschech, Sven Weinzierl, and Mathias Kraus.
+\newblock Inherently interpretable machine learning: A contrasting paradigm to
+  post-hoc explainable ai.
+\newblock {\em Business and Information Systems Engineering}, sep 2025.
+
+\end{thebibliography}

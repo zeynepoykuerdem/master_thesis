@@ -1,0 +1,29 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {0.1}Introduction}{5}{section.0.1}%
+\contentsline {section}{\numberline {0.2}Literature Review and Background}{7}{section.0.2}%
+\contentsline {subsection}{\numberline {0.2.1}Foundations of Image Classification and Deep Learning}{7}{subsection.0.2.1}%
+\contentsline {subsubsection}{Image Classification}{7}{subsection.0.2.1}%
+\contentsline {subsubsection}{Brief Overview of CNN(Convolutional Neural Network) Components}{7}{figure.0.1}%
+\contentsline {subsubsection}{ Feature Extraction vs. Classification}{8}{figure.0.1}%
+\contentsline {subsection}{\numberline {0.2.2}The Taxonomy of Explainable AI in Image Classification}{9}{subsection.0.2.2}%
+\contentsline {subsubsection}{The Categorization by Stage }{10}{figure.0.2}%
+\contentsline {paragraph}{Ante-hoc Interpretability}{10}{figure.0.3}%
+\contentsline {paragraph}{Post-hoc Interpretability}{10}{figure.0.3}%
+\contentsline {subsubsection}{The Categorization by Scope }{12}{figure.0.3}%
+\contentsline {paragraph}{Global Explainability}{12}{figure.0.3}%
+\contentsline {paragraph}{Local Explainability }{12}{figure.0.3}%
+\contentsline {subsubsection}{Local Post-hoc Interpretation Techniques }{13}{figure.0.3}%
+\contentsline {paragraph}{Model-agnostic techniques }{13}{figure.0.3}%
+\contentsline {subparagraph}{Perturbation-based methods }{13}{figure.0.3}%
+\contentsline {paragraph}{Model specific techniques}{13}{figure.0.3}%
+\contentsline {subparagraph}{Gradient-based methods}{13}{figure.0.3}%
+\contentsline {subparagraph}{Decomposition-based methods}{14}{figure.0.3}%
+\contentsline {subsection}{\numberline {0.2.3}The Phenomenon of Memorization}{15}{subsection.0.2.3}%
+\contentsline {subsubsection}{Generalization and Memorization Tradeoff}{15}{subsection.0.2.3}%
+\contentsline {subsubsection}{Memorization Strategies in Convolutional Neural Networks}{16}{subsection.0.2.3}%
+\contentsline {subsection}{\numberline {0.2.4}Faithfulness and Plausibility of Explainable AI }{17}{subsection.0.2.4}%
+\contentsline {section}{\numberline {0.3}Methodology}{18}{section.0.3}%
+\contentsline {section}{\numberline {0.4}Implementation and Structure}{19}{section.0.4}%
+\contentsline {section}{\numberline {0.5}Evaluation and Results }{20}{section.0.5}%
+\contentsline {section}{\numberline {0.6}Conclusion and Future Work}{21}{section.0.6}%
+\contentsline {section}{\numberline {0.7}Appendix}{22}{section.0.7}%
