@@ -19,11 +19,24 @@
 \contentsline {subparagraph}{Gradient-based methods}{13}{figure.0.3}%
 \contentsline {subparagraph}{Decomposition-based methods}{14}{figure.0.3}%
 \contentsline {subsection}{\numberline {0.2.3}The Phenomenon of Memorization}{15}{subsection.0.2.3}%
-\contentsline {subsubsection}{Generalization and Memorization Tradeoff}{15}{subsection.0.2.3}%
-\contentsline {subsubsection}{Memorization Strategies in Convolutional Neural Networks}{16}{subsection.0.2.3}%
-\contentsline {subsection}{\numberline {0.2.4}Faithfulness and Plausibility of Explainable AI }{17}{subsection.0.2.4}%
-\contentsline {section}{\numberline {0.3}Methodology}{18}{section.0.3}%
-\contentsline {section}{\numberline {0.4}Implementation and Structure}{19}{section.0.4}%
-\contentsline {section}{\numberline {0.5}Evaluation and Results }{20}{section.0.5}%
-\contentsline {section}{\numberline {0.6}Conclusion and Future Work}{21}{section.0.6}%
-\contentsline {section}{\numberline {0.7}Appendix}{22}{section.0.7}%
+\contentsline {subsubsection}{Conceptual Deepening of Memorization}{15}{subsection.0.2.3}%
+\contentsline {paragraph}{Label versus Feature Memorization}{16}{subsection.0.2.3}%
+\contentsline {paragraph}{Shortcut Learning and its Implications}{16}{subsection.0.2.3}%
+\contentsline {subsubsection}{White-Box Attacks in DNN and Its Correlation with Memorization }{17}{subsection.0.2.3}%
+\contentsline {paragraph}{Fast Gradient Sign Method (FGSM)}{17}{subsection.0.2.3}%
+\contentsline {paragraph}{Projected Gradient Descent (PGD)}{18}{figure.0.4}%
+\contentsline {section}{\numberline {0.3}Methodology}{19}{section.0.3}%
+\contentsline {subsection}{\numberline {0.3.1}Mathematical Background of Neural Networks and Training}{19}{subsection.0.3.1}%
+\contentsline {subsection}{\numberline {0.3.2}Mathematics of White-Box Attacks (Adversarial Optimization)}{19}{subsection.0.3.2}%
+\contentsline {subsection}{\numberline {0.3.3}XAI and Attribution Mathematics}{19}{subsection.0.3.3}%
+\contentsline {subsection}{\numberline {0.3.4}Experimental Setup and Audit Pipeline }{19}{subsection.0.3.4}%
+\contentsline {subsection}{\numberline {0.3.5}Evaluation Metrics and Analysis}{19}{subsection.0.3.5}%
+\contentsline {section}{\numberline {0.4}Implementation and Structural Design}{20}{section.0.4}%
+\contentsline {subsection}{\numberline {0.4.1}Tools and Frameworks}{20}{subsection.0.4.1}%
+\contentsline {subsection}{\numberline {0.4.2}The Setup( Shorcut Injection into Images)}{20}{subsection.0.4.2}%
+\contentsline {subsection}{\numberline {0.4.3}The Implementation of the White-Box Attack and Audit Pipeline}{20}{subsection.0.4.3}%
+\contentsline {subsection}{\numberline {0.4.4}The Implementation of the XAI Attribution Methods}{20}{subsection.0.4.4}%
+\contentsline {subsection}{\numberline {0.4.5}The Implementation of the Memorization Detection Method}{20}{subsection.0.4.5}%
+\contentsline {section}{\numberline {0.5}Evaluation and Results }{21}{section.0.5}%
+\contentsline {section}{\numberline {0.6}Conclusion and Future Work}{22}{section.0.6}%
+\contentsline {section}{\numberline {0.7}Appendix}{23}{section.0.7}%
