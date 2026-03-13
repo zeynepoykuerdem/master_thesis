@@ -1,6 +1,5 @@
-\documentclass[10pt]{report}     
-\usepackage{fontspec}
-\setmainfont{Times New Roman}      
+\documentclass[10pt]{report}      
+\usepackage{fontspec}    
 \usepackage[english]{babel}        
 \usepackage{amsmath, amssymb}      
 \usepackage{graphicx}              
@@ -75,6 +74,10 @@ End: \& 01. April 2026 \\
 \clearpage
 \pagenumbering{arabic}
 \setcounter{page}{5}
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
 
 \section{Introduction} 
 \input{chapters/introduction.tex}
@@ -88,11 +91,11 @@ End: \& 01. April 2026 \\
 \section{Implementation and Structural Design}
 \input{chapters/implementationandstructure.tex}
 \clearpage
-\section{Evaluation and Results }
+\section{Evaluation and Results}
 \input{chapters/evaluationandresult.tex}
 \clearpage
 \section{Conclusion and Future Work}
-\input{chapters/discussion.tex}
+\input{chapters/conclusion.tex}
 \clearpage
 \section{Appendix}
 

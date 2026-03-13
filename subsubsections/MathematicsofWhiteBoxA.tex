@@ -1,0 +1,80 @@
+
+White-box attacks assume full access to the model's 
+architecture, parameters, and gradients. Unlike black-box 
+scenarios where the attacker has no knowledge of the 
+internal structure, white-box attacks exploit the 
+transparency of the model to systematically craft 
+adversarial examples. Formally, given a model $f_\theta$, 
+an input image $x$ with true label $y$, and a loss 
+function $\mathcal{L}$, the adversarial attack objective 
+is to find a perturbation $\delta$ such that:
+
+\begin{equation}
+x_{adv} = x + \delta, \quad 
+\text{subject to} \quad \|\delta\|_p \leq \epsilon
+\label{eq:advobj}
+\end{equation}
+
+Where $\epsilon$ controls the magnitude of the 
+perturbation and $\|\cdot\|_p$ denotes the $\ell_p$ norm. 
+The attacker aims to maximize the loss while keeping 
+the perturbation imperceptible:
+
+\begin{equation}
+\delta^* = \arg\max_{\|\delta\|_p \leq \epsilon} 
+\mathcal{L}(f_\theta(x + \delta), y)
+\label{eq:advmax}
+\end{equation}
+
+\subsubsection{Fast Gradient Sign Method (FGSM)}
+
+The Fast Gradient Sign Method (FGSM), introduced by 
+Goodfellow et al. (2015), generates adversarial examples 
+by computing a single-step perturbation along the sign 
+of the gradient of the loss with respect to the input:
+
+\begin{equation}
+x_{adv} = x + \epsilon \cdot 
+\text{sign}\left(\nabla_x 
+\mathcal{L}(f_\theta(x), y)\right)
+\label{eq:fgsm}
+\end{equation}
+
+Where $\nabla_x \mathcal{L}(f_\theta(x), y)$ is the 
+gradient of the loss with respect to the input image 
+$x$, and $\text{sign}(\cdot)$ extracts the sign of 
+each gradient component. FGSM exploits the linearity 
+of deep neural networks — components such as ReLU, 
+defined in Equation \ref{eq:relufunc}, are intentionally 
+designed to behave linearly, causing small perturbations 
+applied consistently across input dimensions to produce 
+drastic changes in the model output (Goodfellow et al., 
+2015). The connection between memorization and FGSM 
+vulnerability is examined in Section 4.
+
+\subsubsection{Projected Gradient Descent (PGD)}
+
+Projected Gradient Descent (PGD), proposed by Madry 
+et al. (2018), extends FGSM by applying multiple 
+gradient steps with projection back onto the 
+$\epsilon$-ball at each iteration:
+
+\begin{equation}
+x_{adv}^{(t+1)} = \Pi_{x+\mathcal{S}} \left( 
+x_{adv}^{(t)} + \alpha \cdot \text{sign}\left(
+\nabla_x \mathcal{L}(f_\theta(x_{adv}^{(t)}), y)
+\right)\right)
+\label{eq:pgd}
+\end{equation}
+
+Where $\alpha$ is the step size, $t$ denotes the 
+iteration number, $\mathcal{S} = \{\delta : 
+\|\delta\|_\infty \leq \epsilon\}$ is the allowed 
+perturbation set, and $\Pi_{x+\mathcal{S}}(\cdot)$ 
+denotes the projection operator that ensures the 
+adversarial example remains within the 
+$\epsilon$-ball around the original input $x$. 
+PGD is considered a stronger attack than FGSM as 
+it iteratively refines the perturbation, making 
+it more effective at finding adversarial examples 
+that exploit memorized features in the model.

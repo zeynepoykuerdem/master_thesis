@@ -1,0 +1,5 @@
+Backpropagation
+Erdem
+Zeynep
+Öykü
+ReLU

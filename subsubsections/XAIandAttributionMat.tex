@@ -1,0 +1,166 @@
+
+Explainable Artificial Intelligence (XAI) refers to 
+a set of methods and techniques that make the 
+predictions of machine learning models interpretable 
+and transparent. In the context of this thesis, XAI 
+methods are employed to reveal and interpret memorized 
+features in CNNs trained on image classification tasks. 
+Formally, given a model $f_\theta$ and an input image 
+$x$, an attribution method computes a saliency map 
+$\mathcal{A}(x) \in \mathbb{R}^{H \times W}$ that 
+assigns an importance score to each pixel, indicating 
+its contribution to the model's prediction.
+
+\subsubsection{Gradient-weighted Class Activation 
+Mapping (GradCAM)}
+
+GradCAM (Selvaraju et al., 2017) computes the 
+importance of each feature map in the final 
+convolutional layer with respect to a target 
+class $c$. The weights $\alpha_k^c$ for feature 
+map $k$ are obtained by global average pooling 
+of the gradients:
+
+\begin{equation}
+\alpha_k^c = \frac{1}{Z} \sum_{i} \sum_{j} 
+\frac{\partial \hat{y}^c}{\partial A^k_{ij}}
+\label{eq:gradcamweights}
+\end{equation}
+
+where $Z$ is the number of pixels in the feature 
+map, $\hat{y}^c$ is the predicted score for class 
+$c$, and $A^k_{ij}$ is the activation of feature 
+map $k$ at spatial location $(i,j)$. The GradCAM 
+saliency map is then computed as:
+
+\begin{equation}
+\mathcal{L}^c_{GradCAM} = \text{ReLU}
+\left(\sum_{k} \alpha_k^c A^k\right)
+\label{eq:gradcam}
+\end{equation}
+
+The ReLU operation retains only the features that 
+have a positive influence on the target class $c$. 
+GradCAM produces a coarse localization map that 
+highlights the regions of the input image most 
+relevant to the model's prediction, making it 
+particularly suitable for revealing memorized 
+spatial features in CNNs.
+
+\subsubsection{Integrated Gradients}
+
+Integrated Gradients (Sundararajan et al., 2017) 
+computes attributions by integrating the gradients 
+of the model's output with respect to the input 
+along a straight path from a baseline $x'$ 
+(typically a black image) to the actual input $x$:
+
+\begin{equation}
+\mathcal{IG}_i(x) = (x_i - x'_i) \times 
+\int_{\alpha=0}^{1} \frac{\partial f_\theta
+(x' + \alpha(x - x'))}{\partial x_i} d\alpha
+\label{eq:ig}
+\end{equation}
+
+where $x_i$ is the $i$-th input feature, $x'_i$ 
+is the corresponding baseline feature, and 
+$\alpha$ interpolates between the baseline and 
+the input. In practice, the integral is 
+approximated using a Riemann sum with $m$ steps:
+
+\begin{equation}
+\mathcal{IG}_i(x) \approx (x_i - x'_i) \times 
+\sum_{k=1}^{m} \frac{\partial f_\theta\left(x' + 
+\frac{k}{m}(x - x')\right)}{\partial x_i} 
+\times \frac{1}{m}
+\label{eq:igapprox}
+\end{equation}
+
+Integrated Gradients satisfies the completeness 
+axiom, meaning that the sum of attributions 
+equals the difference between the model's output 
+at the input and the baseline:
+
+\begin{equation}
+\sum_{i} \mathcal{IG}_i(x) = 
+f_\theta(x) - f_\theta(x')
+\label{eq:igcompleteness}
+\end{equation}
+
+\subsubsection{SHAP (SHapley Additive 
+exPlanations)}
+
+SHAP (Lundberg \& Lee, 2017) is grounded in 
+cooperative game theory and computes the 
+contribution of each feature to the model's 
+prediction based on Shapley values. For a 
+model $f_\theta$ and input $x$, the SHAP 
+value for feature $i$ is defined as:
+
+\begin{equation}
+\phi_i = \sum_{S \subseteq F \setminus \{i\}} 
+\frac{|S|!(|F|-|S|-1)!}{|F|!} 
+\left[f_\theta(S \cup \{i\}) - f_\theta(S)\right]
+\label{eq:shap}
+\end{equation}
+
+where $F$ is the set of all features, $S$ is a 
+subset of features excluding $i$, and 
+$f_\theta(S)$ denotes the model's prediction 
+using only the features in $S$. The Shapley 
+value $\phi_i$ represents the average marginal 
+contribution of feature $i$ across all possible 
+feature subsets, ensuring a fair and consistent 
+attribution.
+
+\subsubsection{LIME (Local Interpretable 
+Model-agnostic Explanations)}
+
+LIME (Ribeiro et al., 2016) approximates the 
+behaviour of a complex model locally around 
+a specific input $x$ by fitting an interpretable 
+surrogate model $g \in G$:
+
+\begin{equation}
+\xi(x) = \arg\min_{g \in G} 
+\mathcal{L}(f_\theta, g, \pi_x) + \Omega(g)
+\label{eq:lime}
+\end{equation}
+
+where $\mathcal{L}(f_\theta, g, \pi_x)$ measures 
+how well the surrogate model $g$ approximates 
+$f_\theta$ in the neighborhood of $x$ defined 
+by the proximity measure $\pi_x$, and $\Omega(g)$ 
+is a complexity penalty that ensures the surrogate 
+model remains interpretable. For image 
+classification, LIME generates perturbed versions 
+of the input by masking superpixels and observes 
+the change in the model's prediction to identify 
+the most influential regions.
+
+\subsubsection{Connecting XAI to Memorization}
+
+The attribution methods described above serve 
+as diagnostic tools for revealing memorization 
+in CNNs. A model that has memorized specific 
+training instances will produce saliency maps 
+that highlight instance-specific spurious 
+features rather than semantically meaningful 
+regions. Formally, for a memorized example 
+$(x_i, y_i)$ with high memorization score 
+$\text{mem}(f, \mathcal{D}, i)$ as defined 
+in Equation \ref{eq:memscore}, the attribution 
+map $\mathcal{A}(x_i)$ is expected to assign 
+high importance to spurious features $v_s$ 
+rather than core features $v_c$:
+
+\begin{equation}
+\sum_{j \in v_s} \mathcal{A}_j(x_i) \gg 
+\sum_{j \in v_c} \mathcal{A}_j(x_i)
+\label{eq:xaimem}
+\end{equation}
+
+This formal connection between memorization 
+and XAI attributions constitutes the 
+theoretical foundation of the audit pipeline 
+proposed in Section 3.5.
