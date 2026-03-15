@@ -1,0 +1,109 @@
+\documentclass[10pt]{report}      
+\usepackage{fontspec}    
+\usepackage[english]{babel}        
+\usepackage{amsmath, amssymb}      
+\usepackage{graphicx}              
+\usepackage{siunitx}               
+\usepackage{geometry}              
+\usepackage{fancyhdr}              
+\usepackage{booktabs}              
+\usepackage{color, xcolor}         
+\usepackage{microtype}             
+\usepackage{hyperref}              
+\usepackage{enumitem}              
+\usepackage{tcolorbox} 
+\usepackage{graphicx}
+\usepackage{titlesec}  
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xurl}
+\usepackage{tabularx}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+
+\vspace*{1cm}
+
+\includegraphics[width=0.3\textwidth]{/Users/zeynepoykuerdem/master_thesis/figures/srh_logo.jpg}
+
+\vspace{1.2cm}
+
+{\Large \textbf{SRH University Heidelberg}}
+
+\vspace{1.8cm}
+
+{\LARGE \textbf{Master’s Thesis}}
+
+\vspace{1.2cm}
+
+{\Large Explainable AI for Image Classification: Revealing and Interpreting Model Memorization}
+
+\vspace{2.5cm}
+
+\begin{tabular}{ll}
+Author: \& Erdem, Zeynep Öykü \\
+Matriculation Number: \& 100002305 \\
+Address: \& Emil-Henk-Straße 7 \\
+         \& 69115 Heidelberg \\
+         \& Germany \\
+Email Address: \& zeynepoykuerdem@outlook.com \\
+Supervisor: \& Milan Gnjatovic \\
+Begin: \& 01. October 2025 \\
+End: \& 01. April 2026 \\
+\end{tabular}
+
+\vfill
+\end{center}
+\end{titlepage}
+
+\clearpage
+\pagenumbering{roman}
+\begin{abstract}
+    burda ingilizce abstract
+\end{abstract}
+\clearpage
+\begin{abstract}
+    burda almanca abstract olucak
+\end{abstract}
+\clearpage
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{5}
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+
+\section{Introduction} 
+\input{chapters/introduction.tex}
+\clearpage 
+\section{Literature Review and Background}
+\input{chapters/litrevandbackground.tex}
+\clearpage
+\section{Methodology}
+\input{chapters/methodology.tex}
+\clearpage
+\section{Implementation and Structural Design}
+\input{chapters/implementationandstructure.tex}
+\clearpage
+\section{Evaluation and Results}
+\input{chapters/evaluationandresult.tex}
+\clearpage
+\section{Conclusion and Future Work}
+\input{chapters/conclusion.tex}
+\clearpage
+\section{Appendix}
+
+\bibliography{bibliography.bib}
+\bibliographystyle{alpha} 
+
+
+\newpage
+
+
+\end{document}

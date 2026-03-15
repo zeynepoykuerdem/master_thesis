@@ -1,0 +1,102 @@
+
+Memorization in deep neural networks refers to the phenomenon 
+where a model stores specific training examples rather than 
+learning generalizable patterns from the underlying data 
+distribution. Formally, given a training set 
+$\mathcal{D} = \{(x_i, y_i)\}_{i=1}^n$, a model $f_\theta$ 
+is said to memorize a training example $(x_i, y_i)$ if its 
+prediction is driven by instance-specific features rather 
+than the true underlying distribution $p(y|x)$.
+
+\subsubsection{Generalization and Memorization}
+
+The classical generalization framework defines the 
+generalization error as:
+
+\begin{equation}
+\mathcal{E}_{gen} = \mathcal{E}_{test} - \mathcal{E}_{train}
+\label{eq:generror}
+\end{equation}
+
+Where $\mathcal{E}_{train}$ is the empirical training error 
+and $\mathcal{E}_{test}$ is the test error. A model that 
+memorizes training examples achieves low $\mathcal{E}_{train}$ 
+while exhibiting high $\mathcal{E}_{test}$, resulting in a 
+large generalization gap. However, as demonstrated by 
+\cite{chiyuan_zhang_bd8f0549}, this classical view is insufficient 
+to fully explain memorization — deep neural networks can 
+achieve near-zero training error even on randomly labeled 
+data, yet still generalize well on correctly labeled data. 
+This paradox motivates a more refined formalization.
+
+\subsubsection{Memorization Score}
+
+To quantify memorization at the instance level, the 
+memorization score of a training example $(x_i, y_i)$ 
+is defined as the influence of that example on the 
+model's prediction \cite{feldman2021doeslearningrequirememorization}:
+
+\begin{equation}
+\text{mem}(f, \mathcal{D}, i) = 
+\Pr_{f \sim \mathcal{A}(\mathcal{D})}
+[f(x_i) = y_i] - 
+\Pr_{f \sim \mathcal{A}(\mathcal{D} \setminus \{i\})}
+[f(x_i) = y_i]
+\label{eq:memscore}
+\end{equation}
+
+Where $\mathcal{A}$ is the training algorithm, 
+$\mathcal{D} \setminus \{i\}$ denotes the training set 
+with example $(x_i,y_i)$ removed, and the difference measures 
+how much the model's correct prediction of $x_i$ depends 
+on having seen that example during training. A high 
+memorization score indicates that the model has memorized 
+the example rather than learned a generalizable pattern.
+
+\subsubsection{Label Memorization}
+
+Label memorization occurs when the model fits the training 
+labels without learning the underlying feature distributions. 
+Formally, given a corrupted dataset 
+$\tilde{\mathcal{D}} = \{(x_i, \tilde{y}_i)\}_{i=1}^n$ 
+where $\tilde{y}_i$ is a randomly assigned label, a model 
+exhibits label memorization if:
+
+\begin{equation}
+\mathcal{E}_{train}(\tilde{\mathcal{D}}) \approx 0 
+\quad \text{while} \quad 
+\mathcal{E}_{test}(\tilde{\mathcal{D}}) \approx 
+\frac{K-1}{K}
+\label{eq:labelmem}
+\end{equation}
+
+Where $K$ is the number of classes. This result, 
+demonstrated empirically by \cite{chiyuan_zhang_bd8f0549} on 
+CIFAR-10, shows that the model achieves near-zero 
+training error on randomly labeled data while test 
+error approaches the random chance baseline of 
+$\frac{K-1}{K}$.
+
+\subsubsection{Feature Memorization}
+
+Feature memorization refers to the model retaining 
+spurious features from specific training instances 
+rather than abstracting meaningful representations 
+\cite{simone_bombari_23e6de9b,yang_yu_4720d432}. Unlike 
+label memorization, which concerns the retention of 
+incorrect class assignments, feature memorization 
+reflects the model's tendency to rely on instance-level 
+surface features uncorrelated with the true underlying 
+data distribution. Formally, let $x_i = v_c + v_s + \xi_i$ 
+where $v_c$ is the core feature, $v_s$ is the spurious 
+feature, and $\xi_i$ is instance-level noise. A model 
+exhibits feature memorization when:
+
+\begin{equation}
+|f(v_s; W_T, z_T)| \gg |f(v_c; W_T, z_T)|
+\label{eq:featuremem}
+\end{equation}
+
+That is, the model's output is predominantly determined 
+by the spurious feature $v_s$ rather than the core 
+feature $v_c$ \cite{yang_yu_4720d432}.

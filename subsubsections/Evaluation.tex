@@ -1,0 +1,73 @@
+The experimental results are evaluated using 
+the following metrics:
+
+\subsubsection{Classification Performance}
+
+The model's classification performance is 
+measured using top-1 accuracy on the CIFAR-10 
+test set:
+
+\begin{equation}
+\text{Accuracy} = \frac{1}{n} \sum_{i=1}^{n} 
+\mathbf{1}[\hat{y}_i = y_i]
+\label{eq:accuracy}
+\end{equation}
+
+where $\mathbf{1}[\cdot]$ is the indicator 
+function and $n$ is the number of test examples.
+
+\subsubsection{Adversarial Robustness}
+
+The model's robustness to adversarial attacks 
+is measured by the drop in accuracy under 
+FGSM and PGD perturbations:
+
+\begin{equation}
+\Delta_{adv} = \text{Accuracy}(f_\theta, 
+\mathcal{D}_{test}) - \text{Accuracy}
+(f_\theta, \mathcal{D}_{adv})
+\label{eq:advdrop}
+\end{equation}
+
+where $\mathcal{D}_{adv}$ denotes the 
+adversarially perturbed test set. A larger 
+$\Delta_{adv}$ indicates lower robustness 
+and higher vulnerability to adversarial attacks.
+
+\subsubsection{Memorization Rate}
+
+The memorization rate is defined as the 
+proportion of training examples classified 
+as memorized:
+
+\begin{equation}
+\text{MR} = \frac{|\mathcal{M}|}{|\mathcal{D}|}
+\label{eq:memrate}
+\end{equation}
+
+where $|\mathcal{M}|$ is the number of memorized 
+examples and $|\mathcal{D}|$ is the total number 
+of training examples.
+
+\subsubsection{Attribution Similarity}
+
+To quantify the difference between attribution 
+maps of memorized and non-memorized examples, 
+the structural similarity index (SSIM) is used:
+
+\begin{equation}
+\text{SSIM}(\mathcal{A}_1, \mathcal{A}_2) = 
+\frac{(2\mu_1\mu_2 + c_1)(2\sigma_{12} + c_2)}
+{(\mu_1^2 + \mu_2^2 + c_1)
+(\sigma_1^2 + \sigma_2^2 + c_2)}
+\label{eq:ssim}
+\end{equation}
+
+where $\mu_1, \mu_2$ are the mean values of 
+the attribution maps, $\sigma_1^2, \sigma_2^2$ 
+are their variances, $\sigma_{12}$ is their 
+covariance, and $c_1, c_2$ are stability 
+constants. A low SSIM score between memorized 
+and non-memorized attribution maps indicates 
+that the model relies on fundamentally different 
+features for these two groups of examples.

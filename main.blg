@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: alpha.bst
+Database file #1: bibliography.bib
+Warning--entry type for "ali_raza_537a9747" isn't style-file defined
+--line 437 of file bibliography.bib
+Warning--empty journal in joy_buolamwini_0378cfd5
+Warning--empty chapter and pages in chio_clarence_9b691fc0
+Warning--empty booktitle in anoop_krishnan_6fbfbe57
+Warning--empty publisher in shai_shalev_shwartz_c0318cbc
+You've used 36 entries,
+            2543 wiz_defined-function locations,
+            771 strings with 12819 characters,
+and the built_in function-call counts, 16207 in all, are:
+= -- 1503
+> -- 1136
+< -- 7
++ -- 421
+- -- 414
+* -- 1324
+:= -- 2826
+add.period$ -- 110
+call.type$ -- 36
+change.case$ -- 304
+chr.to.int$ -- 36
+cite$ -- 40
+duplicate$ -- 506
+empty$ -- 945
+format.name$ -- 441
+if$ -- 3151
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 31
+newline$ -- 186
+num.names$ -- 108
+pop$ -- 285
+preamble$ -- 1
+purify$ -- 342
+quote$ -- 0
+skip$ -- 457
+stack$ -- 0
+substring$ -- 617
+swap$ -- 63
+text.length$ -- 7
+text.prefix$ -- 4
+top$ -- 0
+type$ -- 280
+warning$ -- 4
+while$ -- 124
+width$ -- 39
+write$ -- 458
+(There were 5 warnings)

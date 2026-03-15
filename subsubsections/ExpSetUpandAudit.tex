@@ -1,0 +1,108 @@
+
+This section describes the experimental framework 
+designed to reveal and interpret memorization in 
+CNNs applied to image classification. The audit 
+pipeline integrates model training, memorization 
+analysis, adversarial evaluation, and explainability 
+methods into a unified workflow.
+
+\subsubsection{Dataset}
+
+The CIFAR-10 dataset (Krizhevsky et al., 2009) is 
+used as the primary benchmark for the experimental 
+evaluation. CIFAR-10 consists of 60,000 color images 
+of size $32 \times 32$ pixels, distributed across 
+10 classes with 6,000 images per class. The dataset 
+is partitioned into 50,000 training images and 10,000 
+test images. To evaluate the model's behavior on 
+out-of-distribution inputs, a set of custom images 
+collected by the author is additionally used as a 
+supplementary test set.
+
+The input images are preprocessed as follows. Each 
+image $x \in \mathbb{R}^{32 \times 32 \times 3}$ is 
+normalized using the channel-wise mean 
+$\mu = (0.4914, 0.4822, 0.4465)$ and standard 
+deviation $\sigma = (0.2023, 0.1994, 0.2010)$ 
+computed over the training set:
+
+\begin{equation}
+\hat{x} = \frac{x - \mu}{\sigma}
+\label{eq:normalization}
+\end{equation}
+
+\subsubsection{Model Architecture}
+
+A Convolutional Neural Network is trained from 
+scratch on CIFAR-10 as the primary model for 
+memorization analysis. The architecture consists 
+of three convolutional blocks, each containing 
+a convolutional layer, batch normalization, ReLU 
+activation, and max pooling, followed by two 
+fully connected layers for classification. The 
+model is trained using the Adam optimizer defined 
+in Equations \ref{eq:adammoments} and 
+\ref{eq:adamupdate}, with a learning rate of 
+$\eta = 0.001$, batch size of 64, and 
+cross-entropy loss defined in Equation 
+\ref{eq:crossentropy}.
+
+\subsubsection{Memorization Analysis}
+
+To identify memorized examples, the memorization 
+score defined in Equation \ref{eq:memscore} is 
+computed for each training example. Examples with 
+a memorization score above a threshold $\tau$ are 
+classified as memorized:
+
+\begin{equation}
+\mathcal{M} = \{(x_i, y_i) \in \mathcal{D} : 
+\text{mem}(f, \mathcal{D}, i) \geq \tau\}
+\label{eq:memset}
+\end{equation}
+
+where $\mathcal{M}$ denotes the set of memorized 
+examples. The threshold $\tau$ is determined 
+empirically based on the distribution of 
+memorization scores across the training set.
+
+\subsubsection{Adversarial Evaluation}
+
+To assess the security implications of memorization, 
+adversarial examples are generated using FGSM and 
+PGD as defined in Equations \ref{eq:fgsm} and 
+\ref{eq:pgd} respectively. The perturbation 
+magnitude is set to $\epsilon = 0.03$ for both 
+attacks, with PGD using a step size of 
+$\alpha = 0.007$ and $T = 40$ iterations. 
+Adversarial examples are generated for both 
+memorized examples $\mathcal{M}$ and 
+non-memorized examples to compare their 
+relative vulnerability.
+
+\subsubsection{Audit Pipeline}
+
+The complete audit pipeline consists of the 
+following sequential stages:
+
+\begin{enumerate}
+\item \textbf{Training:} Train the CNN on 
+CIFAR-10 using the Adam optimizer and 
+cross-entropy loss.
+\item \textbf{Memorization Analysis:} Compute 
+memorization scores for all training examples 
+and identify the memorized set $\mathcal{M}$.
+\item \textbf{Adversarial Evaluation:} Generate 
+adversarial examples using FGSM and PGD for 
+both memorized and non-memorized examples.
+\item \textbf{XAI Attribution:} Apply GradCAM, 
+Integrated Gradients, SHAP, and LIME to 
+memorized examples and their adversarial 
+counterparts.
+\item \textbf{Analysis:} Compare attribution 
+maps of memorized versus non-memorized examples 
+to reveal instance-specific spurious features.
+\end{enumerate}
+
+
+
