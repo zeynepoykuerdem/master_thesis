@@ -38,6 +38,7 @@ def data_augmentation():
     ]
   )
   return train_transform,test_transform
+
 def load_cifar10_data():
   train_transform,test_transform=data_augmentation()
   train_dataset= torchvision.datasets.CIFAR10(root='./data', train=True,transform=train_transform,download=True)
