@@ -1,7 +1,0 @@
-Backpropagation
-Erdem
-Zeynep
-Öykü
-ReLU
-XAI
-Torchvision

@@ -1,3 +1,15 @@
 .env
 master_thesis/data/cifar-10-python.tar.gz
 master_thesis/data/data/cifar-10-python.tar.gz
+/figures
+*.aux
+*.log
+*.toc
+*.pdf
+*.synctex.gz
+*.out
+*.lof
+*.lot
+
+.DS_Store
+.vscode/
